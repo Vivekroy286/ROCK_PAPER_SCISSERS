@@ -1,4 +1,6 @@
 import random
+from collections import Counter
+
 
 # Define a function to generate the next move based on opponent's move history
 def predict_opponent_move(opponent_history):
@@ -13,7 +15,7 @@ def predict_opponent_move(opponent_history):
         # Check if the opponent has a tendency to play the same move after losing
         elif len(opponent_history) >= 4 and opponent_history[-1] == counter_move(opponent_history[-4]):
             return counter_move(opponent_history[-1])  # Counter the expected next move
-    # If no clear pattern is detected, play randomly
+    # If no clear pattern is detected, predict the move that defeats the most frequent opponent move
     return random.choice(["R", "P", "S"])
 
 # Define a function to determine the counter move
