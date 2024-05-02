@@ -21,11 +21,11 @@ def predict_opponent_move(opponent_history):
 # Define a function to determine the counter move
 def counter_move(move):
     if move == "R":
-        return "S"  # Paper beats Rock
+        return "P"  # Paper beats Rock
     elif move == "P":
-        return "R"  # Scissors beat Paper
+        return "S"  # Scissors beat Paper
     else:
-        return "P"  # Rock beats Scissors
+        return "R"  # Rock beats Scissors
 
 # Define the player function
 def player(prev_play, opponent_history=[]):
